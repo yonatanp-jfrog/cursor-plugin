@@ -2,17 +2,13 @@
 
 JFrog Platform integration for Cursor — artifact management, security scanning, supply-chain best practices, and Agent Guard.
 
-## Breaking changes in v0.5.0
-
-**Environment variable renamed.** `JFROG_PLATFORM_URL` has been replaced by `JFROG_URL` to align with the JFrog CLI convention. The new variable must include the protocol and must not have a trailing slash (e.g., `https://mycompany.jfrog.io`). Previously, the plugin prepended `https://` automatically; it no longer does. Update your shell profile or CI config accordingly.
-
 ## Prerequisites
 
 1. **JFrog Platform** access (Cloud or self-hosted).
 2. An admin must **enable the JFrog MCP Server** on the platform (Cloud/SaaS only):
    - Navigate to **Administration > General > Settings** in the JFrog UI.
    - Toggle the **MCP Server** option ON and save.
-3. Set the `JFROG_URL` environment variable to your JFrog instance URL, including the protocol and **without** a trailing slash (e.g., `https://mycompany.jfrog.io`). This matches the JFrog CLI convention for `JFROG_URL` / `JF_URL`.
+3. Set the `JFROG_PLATFORM_URL` environment variable to your JFrog instance (e.g., `mycompany.jfrog.io`).
 4. **JFrog CLI** (`jf`) is used by the skills for authentication and REST/GraphQL API operations. If missing, the agent will attempt to install it. You can also install manually via `brew install jfrog-cli` or the [official install script](https://jfrog.com/help/r/jfrog-cli/install-the-jfrog-cli).
 
 CLI authentication options: run `jf login` for browser-based setup, or set the `JFROG_ACCESS_TOKEN` environment variable. MCP-based workflows authenticate via **OAuth** and require no additional configuration.

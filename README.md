@@ -6,8 +6,6 @@ JFrog plugin for [Cursor](https://cursor.com): artifact management, security sca
 
 - **Official skills.** The plugin now uses the official [jfrog-skills](https://github.com/jfrog/jfrog-skills) v0.11.0, replacing the previously bundled skill content. This brings structured reference files, automation scripts, and a three-tier tool selection strategy (MCP, CLI, REST/GraphQL).
 - **Package safety skill.** New `jfrog-package-safety-and-download` skill for checking whether packages are safe, curated, or allowed before downloading them through Artifactory.
-- **Breaking: `JFROG_PLATFORM_URL` renamed to `JFROG_URL`.** The environment variable now follows the JFrog CLI convention and must include the protocol (e.g., `https://mycompany.jfrog.io`). Previously, the plugin prepended `https://` automatically; it no longer does. Update your shell profile or CI config accordingly.
-
 ---
 
 ## Features
@@ -54,7 +52,7 @@ Use either the marketplace link from the [Configure Cursor](https://docs.jfrog.c
 
 | Variable | Description |
 | --- | --- |
-| `JFROG_URL` | Your JFrog platform URL, e.g. `https://mycompany.jfrog.io` |
+| `JFROG_PLATFORM_URL` | Your JFrog platform URL, e.g. `mycompany.jfrog.io` |
 | `JFROG_ACCESS_TOKEN` | Your JFrog access token |
 
 ### 2. Configure the JFrog CLI
